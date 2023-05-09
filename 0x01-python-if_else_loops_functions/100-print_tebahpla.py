@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-# 11-pow.py
+# 100-print_tebahpla.py
 
-
-def pow(a, b):
-    """Return a to the power of b."""
-    return (a ** b)
+""""Print the alphabet in reverse order alternating upper- and lower-case."""
+i = 0
+for c in range(ord('z'), ord('a') - 1, -1):
+    print("{}".format(chr(c - i)), end="")
+    i = 32 if i == 0 else 0
