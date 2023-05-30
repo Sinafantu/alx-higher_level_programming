@@ -2,19 +2,10 @@
 import sys
 
 
-def safe_print_integer_err(value):
-    """Prints an integer with "{:d}".format().
-    If a ValueError message is caught, a corresponding
-    message is printed to standard error.
-    Args:
-        value (int): The integer to print.
-    Returns:
-        If a TypeError or ValueError occurs - False.
-        Otherwise - True.
-    """
+def safe_function(fct, *args):
     try:
-        print("{:d}".format(value))
-        return True
-    except (TypeError, ValueError) as error:
-        print("Exception: {}".format(error), file=sys.stderr)
-        return False
+        result = fct(*args)
+    except Exception as err:
+        print("Exception: {}".format(err), file=sys.stderr)
+        return None
+    return resulte
